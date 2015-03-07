@@ -92,8 +92,6 @@
                 $this->template    = new Template();
                 $this->syndication = new Syndication();
                 $this->logging     = new Logging($this->config->log_level);
-                //$this->plugins      = new Plugins(); // This must be loaded last
-                //$this->themes       = new Themes();
                 $this->reader       = new Reader();
                 $this->helper_robot = new HelperRobot();
 
@@ -154,6 +152,7 @@
                 /** Files */
                 $this->addPageHandler('/file/upload/?', '\Idno\Pages\File\Upload', true);
                 $this->addPageHandler('/file/picker/?', '\Idno\Pages\File\Picker', true);
+                $this->addPageHandler('/filepicker/?', '\Idno\Pages\File\Picker', true);
                 $this->addPageHandler('/file/([A-Za-z0-9]+)(/.*)?', '\Idno\Pages\File\View', true);
 
                 /** Users */
@@ -505,12 +504,21 @@
             }
 
             /**
+             * Retrieves admins for this site
+             * @return array
+             */
+            function getAdmins()
+            {
+                return User::get(['admin' => true],[],9999);
+            }
+
+            /**
              * Retrieve this version of idno's version number
              * @return string
              */
             function version()
             {
-                return '0.7.1';
+                return '0.7.5';
             }
 
             /**

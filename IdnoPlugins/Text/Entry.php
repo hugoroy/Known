@@ -43,6 +43,10 @@
                 return 'article';
             }
 
+            /**
+             * Retrieve icon
+             * @return mixed|string
+             */
             function getIcon() {
                 $xpath = new \DOMXPath(@\DOMDocument::loadHTML($this->getDescription()));
                 $src = $xpath->evaluate("string(//img/@src)");
@@ -73,15 +77,11 @@
                         }
                     }
 
-                    if ($this->save()) {
+                    if ($this->save($new)) {
 
                         $autosave = new Autosave();
                         $autosave->clearContext('entry');
 
-                        if ($new) {
-                            // Add it to the Activity Streams feed
-                            $this->addToFeed();
-                        }
                         \Idno\Core\Webmention::pingMentions($this->getURL(), \Idno\Core\site()->template()->parseURLs($this->getTitle() . ' ' . $this->getDescription()));
                         return true;
                     }

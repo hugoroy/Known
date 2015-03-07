@@ -1,4 +1,4 @@
-<form action="<?= \Idno\Core\site()->config()->getDisplayURL() ?>file/picker/" method="post"
+<form action="<?= \Idno\Core\site()->config()->getDisplayURL() ?>filepicker/" method="post"
       enctype="multipart/form-data">
     <div class="row">
         <div class="span10 offset1">
@@ -24,7 +24,7 @@
                 </label>
 
                 <p>
-                    <?= \Idno\Core\site()->actions()->signForm('/file/picker/'); ?>
+                    <?= \Idno\Core\site()->actions()->signForm('/filepicker/'); ?>
                     <input type="submit" value="Upload this image" class="btn btn-primary" style="display:none"
                            id="upload-button">
                 </p>
@@ -34,6 +34,10 @@
     </div>
 </form>
 <script>
+    $(document).ready(function() {
+        $('#photo').click();
+    })
+
     //if (typeof photoPreview !== function) {
     function photoPreview(input) {
 
