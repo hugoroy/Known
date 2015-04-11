@@ -15,24 +15,24 @@ Idno/.idea/.name
 /.DS_Store
 /*/.DS_Store
 
-config.ini
+# config.ini
 *.json
 tests/_output/*
 *-ori.*
 
-IdnoPlugins/Facebook/
-IdnoPlugins/Flickr/
-IdnoPlugins/Foursquare/
-IdnoPlugins/SoundCloud/
-IdnoPlugins/Twitter/
-IdnoPlugins/LinkedIn/
-IdnoPlugins/GooglePlus/
-IdnoPlugins/FooterJS/
-IdnoPlugins/Google/
-IdnoPlugins/IndiePub/
-IdnoPlugins/StaticPages/
-IdnoPlugins/Markdown/
-IdnoPlugins/ApplyToJoin/
+#IdnoPlugins/Facebook/
+#IdnoPlugins/Flickr/
+#IdnoPlugins/Foursquare/
+#IdnoPlugins/SoundCloud/
+#IdnoPlugins/Twitter/
+#IdnoPlugins/LinkedIn/
+#IdnoPlugins/GooglePlus/
+#IdnoPlugins/FooterJS/
+#IdnoPlugins/Google/
+#IdnoPlugins/IndiePub/
+#IdnoPlugins/StaticPages/
+#IdnoPlugins/Markdown/
+#IdnoPlugins/ApplyToJoin/
 
 error_log
 
